@@ -1,179 +1,456 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoGo — Beyond Limits</title>
 
-    <title>NoGo — Beyond Limits</title>
+<style>
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+body {
+    margin: 0;
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+nav {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
 
-        body {
-            margin: 0;
-            background: #080808;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
 
-        nav {
-            padding: 20px;
-            border-bottom: 1px solid #252525;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+.hero h1 {
+    font-size: 55px;
+    margin: 0 0 10px;
+}
 
-        .hero {
-            text-align: center;
-            padding: 100px 20px 120px;
-        }
+.hero h2 {
+    font-size: 28px;
+    color: #aaa;
+}
 
-        .hero h1 {
-            font-size: 55px;
-            margin: 0 0 15px;
-        }
+.hero p {
+    color: #aaa;
+    font-size: 17px;
+}
 
-        .hero h2 {
-            font-size: 25px;
-            color: #aaa;
-            font-weight: normal;
-        }
+.explore-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
 
-        .hero p {
-            color: #888;
-            font-size: 17px;
-        }
+.explore-btn:hover {
+    background: #ddd;
+}
 
-        .explore-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 28px;
-            border-radius: 30px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
+#explore {
+    padding: 70px 20px;
+    text-align: center;
+}
 
-        .explore-btn:active {
-            transform: scale(0.95);
-        }
+#explore h2 {
+    font-size: 35px;
+}
 
-        #explore {
-            padding: 70px 20px;
-            border-top: 1px solid #222;
-            text-align: center;
-        }
+.subtitle {
+    color: #aaa;
+    margin-bottom: 35px;
+}
 
-        #explore h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+.cards {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
 
-        #explore > p {
-            color: #888;
-            margin-bottom: 35px;
-        }
+.card {
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+}
 
-        .cards {
-            max-width: 500px;
-            margin: auto;
-            display: grid;
-            gap: 15px;
-        }
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #666;
+}
 
-        .card {
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 18px;
-            padding: 25px;
-            text-align: left;
-        }
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
 
-        .card h3 {
-            margin: 0 0 8px;
-            font-size: 21px;
-        }
+.card p {
+    margin: 0;
+    color: #999;
+}
 
-        .card p {
-            margin: 0;
-            color: #888;
-        }
 
-        footer {
-            text-align: center;
-            padding: 35px 20px;
-            color: #666;
-            border-top: 1px solid #222;
-        }
-    </style>
+/* SMARTPHONES */
+
+#smartphones {
+    padding: 80px 20px;
+    text-align: center;
+    background: #0c0c0c;
+}
+
+#smartphones h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.phone-subtitle {
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.phone-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.phone {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.phone:hover {
+    transform: translateY(-4px);
+    border-color: #666;
+}
+
+.phone-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.phone h3 {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.phone p {
+    color: #999;
+    line-height: 1.5;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
+    border: 1px solid #555;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.view-btn:hover {
+    background: white;
+    color: black;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    color: #666;
+    border-top: 1px solid #222;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .cards,
+    .phone-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #smartphones h2 {
+        font-size: 31px;
+    }
+}
+</style>
 </head>
+
 
 <body>
 
-    <nav>
-        NoGo
-    </nav>
+<nav>NO•GO</nav>
 
-    <section class="hero">
-        <h1>Beyond Limits!</h1>
 
-        <h2>Welcome to NoGo</h2>
+<!-- HERO -->
 
-        <p>Technology without limits!</p>
+<section class="hero">
 
-        <a href="#explore" class="explore-btn">
-            Explore More
+    <h1>Beyond Limits.</h1>
+
+    <h2>Welcome to NoGo.</h2>
+
+    <p>Technology without limits.</p>
+
+    <a href="#explore" class="explore-btn">
+        Explore More
+    </a>
+
+</section>
+
+
+<!-- EXPLORE -->
+
+<section id="explore">
+
+    <h2>Explore NoGo</h2>
+
+    <p class="subtitle">
+        Discover the world of NoGo technology.
+    </p>
+
+
+    <div class="cards">
+
+        <!-- SMARTPHONES -->
+
+        <a href="#smartphones" class="card">
+
+            <h3>📱 Smartphones</h3>
+
+            <p>
+                Explore NoGo smartphones and their technology.
+            </p>
+
         </a>
-    </section>
 
 
-    <!-- Explore More ke baad yahan aayega -->
-    <section id="explore">
+        <!-- AIR OS -->
 
-        <h2>Explore NoGo</h2>
+        <a href="#" class="card">
 
-        <p>Discover the world of NoGo technology.</p>
+            <h3>⚡ AirOS</h3>
 
-        <div class="cards">
+            <p>
+                Discover the NoGo operating system.
+            </p>
 
-            <div class="card">
-                <h3>📱 Smartphones</h3>
-                <p>Explore NoGo smartphones and flagship devices.</p>
-            </div>
+        </a>
 
-            <div class="card">
-                <h3>⚡ AirOS</h3>
-                <p>Experience the NoGo software ecosystem.</p>
-            </div>
 
-            <div class="card">
-                <h3>✏️ AirPen</h3>
-                <p>Create, write and interact with your NoGo devices.</p>
-            </div>
+        <!-- AIRPEN -->
 
-            <div class="card">
-                <h3>🌐 NoGo Ecosystem</h3>
-                <p>Discover the growing world of NoGo products.</p>
-            </div>
+        <a href="#" class="card">
+
+            <h3>✏️ AirPen</h3>
+
+            <p>
+                Precision, creativity and smart interaction.
+            </p>
+
+        </a>
+
+
+        <!-- ECOSYSTEM -->
+
+        <a href="#" class="card">
+
+            <h3>🌐 Ecosystem</h3>
+
+            <p>
+                Discover the connected NoGo ecosystem.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- SMARTPHONE SERIES -->
+
+<section id="smartphones">
+
+    <h2>NoGo Smartphones</h2>
+
+    <p class="phone-subtitle">
+        Explore the NoGo smartphone series.
+    </p>
+
+
+    <div class="phone-grid">
+
+
+        <!-- RAPTOR X -->
+
+        <div class="phone">
+
+            <div class="phone-icon">🚀</div>
+
+            <h3>Raptor X</h3>
+
+            <p>
+                Performance-focused smartphones built
+                for speed, power and everyday use.
+            </p>
+
+            <a href="#" class="view-btn">
+                Explore Raptor X
+            </a>
 
         </div>
 
-    </section>
+
+        <!-- AIR X -->
+
+        <div class="phone">
+
+            <div class="phone-icon">⚡</div>
+
+            <h3>Air X</h3>
+
+            <p>
+                Slim, modern smartphones designed
+                around a clean and premium experience.
+            </p>
+
+            <a href="#" class="view-btn">
+                Explore Air X
+            </a>
+
+        </div>
 
 
-    <footer>
-        © 2026 NoGo — Ahmad Akram.
-    </footer>
+        <!-- VISION -->
+
+        <div class="phone">
+
+            <div class="phone-icon">👁️</div>
+
+            <h3>Vision</h3>
+
+            <p>
+                Camera-focused smartphones made
+                for photography, video and creativity.
+            </p>
+
+            <a href="#" class="view-btn">
+                Explore Vision
+            </a>
+
+        </div>
+
+
+        <!-- ZORD -->
+
+        <div class="phone">
+
+            <div class="phone-icon">🔷</div>
+
+            <h3>Zord</h3>
+
+            <p>
+                Accessible NoGo smartphones bringing
+                modern technology to more users.
+            </p>
+
+            <a href="#" class="view-btn">
+                Explore Zord
+            </a>
+
+        </div>
+
+
+        <!-- DEFENDER V -->
+
+        <div class="phone">
+
+            <div class="phone-icon">🛡️</div>
+
+            <h3>Defender V</h3>
+
+            <p>
+                Tough and durable smartphones designed
+                for demanding environments.
+            </p>
+
+            <a href="#" class="view-btn">
+                Explore Defender V
+            </a>
+
+        </div>
+
+
+        <!-- FOLD X -->
+
+        <div class="phone">
+
+            <div class="phone-icon">📱</div>
+
+            <h3>Fold X</h3>
+
+            <p>
+                Foldable smartphones combining
+                innovative design with a larger display.
+            </p>
+
+            <a href="#" class="view-btn">
+                Explore Fold X
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 NoGo — Beyond Limits.
+
+</footer>
+
 
 </body>
-    </html>
+                </html>
